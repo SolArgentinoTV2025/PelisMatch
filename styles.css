@@ -1,93 +1,152 @@
-    @import url("https://fuentes.solargentinotv.com.ar/netflixsans.css");
+@import url("https://fuentes.solargentinotv.com.ar/netflixsans.css");
 
-    /* Estilo general */
-    body {
-      font-family: 'Netflix Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #121212;
-      color: #ffffff;
-    }
+/* Estilo general */
+body {
+  font-family: 'Netflix Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-    header {
-      text-align: center;
-      padding: 20px;
-    }
+header {
+  text-align: center;
+  padding: 2em;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      color: #e50914;
-    }
+header h1 {
+  font-size: 2.5em;
+  color: #e50914;
+}
 
-    header p {
-      font-size: 1.2rem;
-    }
+header p {
+  font-size: 1.2em;
+}
 
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  flex-grow: 1; /* Asegura que el main ocupe el espacio disponible */
+}
 
-    textarea {
-      width: 90%;
-      max-width: 600px;
-      height: 100px;
-      font-size: 1rem;
-      margin-bottom: 15px;
-      border: 1px solid #333;
-      background-color: #222;
-      color: #ffffff;
-      padding: 10px;
-      border-radius: 5px;
-      resize: none;
-    }
+textarea {
+  width: 90%;
+  max-width: 37.5em; /* 600px en em */
+  height: 6.25em; /* 100px en em */
+  font-size: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #ffffff;
+  padding: 0.625em; /* 10px en em */
+  border-radius: 0.3125em; /* 5px en em */
+  resize: none;
+}
 
-    button {
-      font-size: 1rem;
-      padding: 10px 20px;
-      background-color: #e50914;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+button {
+  font-size: 1em;
+  padding: 0.625em 1.25em; /* 10px 20px en em */
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.3125em; /* 5px en em */
+  cursor: pointer;
+}
 
-    button:hover {
-      background-color: #b00710;
-    }
+button:hover {
+  background-color: #b00710;
+}
 
-    #resultados {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      width: 90%;
-    }
+#resultados {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5em, 1fr)); /* 200px en em */
+  gap: 2em;
+  width: 90%;
+}
 
-    .resultado {
-      text-align: center;
-      background-color: #1e1e1e;
-      border-radius: 10px;
-      padding: 15px;
-    }
+.resultado {
+  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 0.625em; /* 10px en em */
+  padding: 1em;
+}
 
-    .resultado img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
+.resultado img {
+  max-width: 100%;
+  border-radius: 0.625em; /* 10px en em */
+}
 
-    .resultado h3 {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
+.resultado h3 {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #181818;
-      color: #aaa;
-      position: relative;
-      bottom: 0;
-    }
+footer {
+  text-align: center;
+  padding: 1.25em;
+  background-color: #181818;
+  color: #aaa;
+  position: relative;
+  bottom: 0;
+  margin-top: auto; /* Esto asegura que el footer se quede al final */
+}
+
+/* Media Queries para dispositivos más pequeños */
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  main {
+    padding: 1.5em;
+  }
+
+  textarea {
+    max-width: 100%;
+    height: 5em; /* Ajuste en la altura */
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.5em 1em; /* Ajuste en el tamaño del botón */
+  }
+
+  #resultados {
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr)); /* 160px en em */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header p {
+    font-size: 0.9em;
+  }
+
+  textarea {
+    font-size: 0.9em;
+    height: 4.5em; /* Ajuste en la altura */
+  }
+
+  button {
+    font-size: 0.8em;
+    padding: 0.4em 0.8em; /* Ajuste en el tamaño del botón */
+  }
+
+  #resultados {
+    grid-template-columns: 1fr; /* Columna única en pantallas muy pequeñas */
+  }
+}
