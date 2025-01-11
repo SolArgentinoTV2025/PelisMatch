@@ -1,4 +1,4 @@
-    const API_KEY = "TU_API_KEY_DE_TMDB";
+    const API_KEY = "4bc9ca5727df23e276660a9da6a8371c";
     const BASE_URL = "https://api.themoviedb.org/3";
 
     document.getElementById("buscarBtn").addEventListener("click", async () => {
