@@ -13,8 +13,12 @@ document.getElementById("buscarBtn").addEventListener("click", async () => {
 
   console.log("Buscando sinopsis: ", sinopsis); // Depuración: ver la sinopsis que se está buscando
 
+  // Extraer palabras clave simples de la sinopsis para mejorar la búsqueda
+  const palabrasClave = sinopsis.split(" ").slice(0, 5).join(" ");  // Tomamos las primeras 5 palabras de la sinopsis (puedes ajustar esto)
+  
   try {
-    const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(sinopsis)}&language=es`);
+    // Buscar usando las palabras clave extraídas de la sinopsis
+    const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(palabrasClave)}&language=es`);
     const data = await response.json();
     
     console.log("Respuesta de la API: ", data); // Depuración: ver la respuesta de la API
@@ -29,7 +33,7 @@ document.getElementById("buscarBtn").addEventListener("click", async () => {
         
         // Calcular el porcentaje de similitud (como ejemplo)
         const titleWords = movie.title.toLowerCase().split(" ");
-        const sinopsisWords = sinopsis.toLowerCase().split(" ");
+        const sinopsisWords = palabrasClave.toLowerCase().split(" ");
         const commonWords = titleWords.filter(word => sinopsisWords.includes(word));
         const similarityPercentage = Math.round((commonWords.length / titleWords.length) * 100);
 
