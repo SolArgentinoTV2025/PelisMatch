@@ -88,4 +88,6 @@
       padding: 15px;
       background-color: #181818;
       color: #aaa;
+      position: relative;
+      bottom: 0;
     }
